@@ -1,2 +1,5 @@
 #!/bin/bash
-ln -s /bin/ls __ls__
+
+file_type=$(file -b /tmp/iamafile)
+echo "The type of file iamafile is: $file_type"
+_
