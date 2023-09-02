@@ -1,1 +1,2 @@
+#!/bin/bash
 find . -maxdepth 1 -exec printf "%s, " {} \; | sed 's/,$/\n/'
