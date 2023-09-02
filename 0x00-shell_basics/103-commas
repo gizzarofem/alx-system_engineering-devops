@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 1 -exec printf "%s, " {} \; | sed 's/,$/\n/'
+find . -maxdepth 1 -printf "%p/" -o -printf "%f, " | sort -d -f -k 1 | tr -d '\n'
