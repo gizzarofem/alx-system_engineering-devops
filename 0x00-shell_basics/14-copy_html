@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 1 -name "*.html" -exec cp -u {} .. \; -exec stat -c "%A %U %G %s %n" {} \;
+find . -maxdepth 1 -name "*.html" -exec cp -u {} ..
