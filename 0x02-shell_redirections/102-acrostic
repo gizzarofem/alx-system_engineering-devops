@@ -1,3 +1,13 @@
 #!/bin/bash
-decoded_message=$(awk '{print $1}' "$1" | tr -d '\n')
+
+# Read each line of the input file
+while read -r line; do
+  # Extract the first character of each line
+  first_char="${line:0:1}"
+  
+  # Append the first character to the decoded message
+  decoded_message="${decoded_message}${first_char}"
+done < "$1"
+
+# Print the decoded message with a newline
 echo -e "$decoded_message\n"
