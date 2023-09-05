@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Read the input TSV file and extract the host or IP addresses
+awk -F'\t' 'NR > 1 { hosts[$1]++ } END { for (host in hosts) print host }' "$1" \
+  | sort | uniq -c | sort -rnk1,1 | head -n11 | awk '{ print $2 }'
